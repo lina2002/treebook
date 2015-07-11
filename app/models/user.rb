@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
   # This is in addition to a real persisted field like 'username'
   has_many :statuses
 
+  validates :first_name, presence: true
+
+  validates :last_name, presence: true
+
   attr_accessor :login
 
   def self.find_for_database_authentication(warden_conditions)
